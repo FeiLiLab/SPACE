@@ -10,15 +10,15 @@ The SPACE atlas provides the first systematic roadmap for dissecting the spatial
 - Step02-Identification of the universal spatial niches across cancer types.R: R script to identify universal spatial niches across cancer types.
 - Step03-Characterization of spatially resolved homotypic immune cell colonies.R: R script to detect spatially resolved homotypic immune cell colony analysis.  
 - Step04-Association analysis between niche-resolved cell proportions and ICB ORR.R: R script to perform correlation analysis between niche-resolved cell proportion and objective response rate in cancer immune checkpoint therapy.
-- Step05-Definition of SEGs.R: R script to identify spatially enriched genes (SEGs), cancer-shared SEGs and to perform reactome pathway enrichment based on SEGs.  
+- Step05-Definition of spatially enriched genes (SEGs) and cancer-shared SEGs.R: R script to identify spatially enriched genes (SEGs), cancer-shared SEGs and to perform reactome pathway enrichment based on SEGs.  
 - Step06_1-Inference of gene regulatory networks.R: R script to prepare input data for pySCENIC transcription factor (TF) analysis and to identify spatially enriched TFs (SETFs) and cancer-shared SETFs.
 - Step06_2-Inference of gene regulatory networks.slurm: Liunx slurm script to execute the pySCENIC TF analysis pipeline.
-- Step07-Identification of spatially enriched metabolic pathways.R: R script using AUCell to evaluate metabolic activity based on Reactome dataset, and to identify spatially enriched metabolic pathways (SEMPs) and cancer-shared SEMPs.
+- Step07-Identification of spatially enriched metabolic pathways (SEMPs) and cancer-shared SEMPs.R: R script using AUCell to evaluate metabolic activity based on Reactome dataset, and to identify spatially enriched metabolic pathways (SEMPs) and cancer-shared SEMPs.
 - Step08-Cell_cell_communication analysis.R: R script to quantify ligand–receptor interaction strengths between sender and receiver cell types, and to identify spatially enriched ligand-receptor pairs (SELRPs).
 - Step09_1-Validation of the SEGs of T cells within the tumor core microenvironment by NMF-based spatial clustering.R: R script to compute the neighboring cell compostion of T cells; output serves as input for Step09_2.
 - Step09_2-Validation of the SEGs of T cells within the tumor core microenvironment by NMF-based spatial clustering.ipynb: Python script to perform validation of the SEGs of T cells within the tumor core microenvironment by NMF-based spatial clustering.
 - Step10-Identification of transcriptional hallmarks of tumor cells linking to T cell proximity within the tumor core.R: R script to identify transcriptional hallmarks (genes and pathways) in tumor cells linking to T cell proximity within the tumor core (spatial niche 4).
-- Step11-Definition of the STRA-T cell state.R: R script to identify the solid tumor-accessible and -reactive T (STAR-T) cell state.
+- Step11-Definition of the tumor-accessible and -reactive T (STRA-T) cell state.R: R script to identify the solid tumor-accessible and -reactive T (STAR-T) cell state.
 - Step12-Identification of molecular programs of STAR-T cells.R: R script to detect differentially expressed genes (DEGs), cancer-shared DEGS, differentially activated TFs (DATFs), cancer-shared DATFs, and dysregulated ligand-receptor pairs in STAR-T cells compared to other T cells within the tumor core (spatial niche 4).
 
 # Operation systems
