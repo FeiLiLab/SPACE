@@ -30,7 +30,6 @@ In our analysis, we used a Linux server with the following specifications: an In
 # Installation guide
 R packages required for the pipeline can be installed from CRAN (https://cran.r-project.org/) using the install.packages() function, or from Bioconductor (https://bioconductor.org/) using the BiocManager::install() function.
 We used conda to manage python packages, python packages can be installed with conda install and pip install.
-pySCENIC used for transcription factor analysis can be installed from https://github.com/aertslab/pySCENIC.
 # Packages
 # Pyhton base and python packages:
 - python (version 3.11.6 for NMF, version 3.8.20 for pySCENIC, version 3.13.5 for scanpy)
