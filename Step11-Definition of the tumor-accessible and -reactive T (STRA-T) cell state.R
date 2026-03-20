@@ -39,7 +39,7 @@ for (cancer in cancer_types) {
   # Run AUCell_buildRankings
   cells_rankings <- AUCell_buildRankings(
     expr_matrix, 
-    plotStats = FALSE,  # ?ر?ͳ??ͼ????
+    plotStats = FALSE,
     nCores = 8)
   # Run AUCell_calcAUC
   cells_AUC <- AUCell_calcAUC(

@@ -475,11 +475,14 @@ df_filtered_sn4$source=gsub("T-cell","T_cell",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("B-cell","B_cell",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("Dendritic-cell","Dendritic_cell",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("Smooth-muscle","Smooth_muscle",df_filtered_sn4$source)
+df_filtered_sn4$source=gsub("Malignant/Epithelial","Malignant_Epithelial",df_filtered_sn4$source)
 df_filtered_sn4$target=gsub("T-cell","T_cell",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("B-cell","B_cell",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("Dendritic-cell","Dendritic_cell",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("Smooth-muscle","Smooth_muscle",df_filtered_sn4$target)
+df_filtered_sn4$target=gsub("Malignant/Epithelial","Malignant_Epithelial",df_filtered_sn4$target)
 unique(df_filtered_sn4$source)
+unique(df_filtered_sn4$target)
 
 # (5). Append a pair column, include source-target-ligand-receptor
 df_filtered_sn4$source_target=paste(df_filtered_sn4$source,df_filtered_sn4$target,sep=":")
@@ -524,7 +527,7 @@ selected_marker_genes <- list(
   Mast_gt05 = unlist(final_marker_list[["Mast_gt05%"]]),
   Dendritic_cell_gt05 = unlist(final_marker_list[["Dendritic_cell_gt05%"]]),
   
-  Malignant_gt05 = allgenes_5k$gene, 
+  Malignant_Epithelial_gt05 = allgenes_5k$gene, 
   cell_other_gt05 = unlist(final_marker_list[["T_cell_gt05%"]]),
   cell_start_gt05 = unlist(final_marker_list[["T_cell_gt05%"]])
   

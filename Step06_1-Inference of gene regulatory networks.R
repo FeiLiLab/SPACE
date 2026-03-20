@@ -31,7 +31,7 @@ output_dir <- "./loom_files"
 dir.create(output_dir, showWarnings = FALSE)
 
 # Define cell types to exclude
-cells_to_remove <- c("Malignant", "Oligodendrocyte", "Keratinocyte")
+cells_to_remove <- c("Malignant/Epithelial", "Oligodendrocyte", "Keratinocyte")
 
 ################################################################################
 # 1_2. Convert the Seurat object to loom file for pySCENIC input

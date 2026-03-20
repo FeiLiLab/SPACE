@@ -256,7 +256,7 @@ dev.off()
 # 4_4. Visualize the expression of marker gene
 ################################################################################
 
-markerxe_homo<-intersect(c("EPCAM","CDH1", # Malignant
+markerxe_homo<-intersect(c("EPCAM","CDH1", # Malignant/Epithelial
                            "CD3E","CD8A","CD4",#T_cell
                            "MS4A1","CD79A",#B_cell
                            "XBP1","MZB1",#Plasma
@@ -322,7 +322,7 @@ table(obj_BLCA$Xenium_snn_res.0.5)
 # 5_2. Annotate cell clusters according to lineage markers (XXX represents cluster ID)
 ################################################################################
 
-obj_BLCA <- RenameIdents(obj_BLCA,'XXX' = 'Malignant','XXX' = 'Fibroblast','XXX' = 'Smooth_muscle','XXX' = 'Endothelial','XXX' = 'Pericyte',
+obj_BLCA <- RenameIdents(obj_BLCA,'XXX' = 'Malignant/Epithelial','XXX' = 'Fibroblast','XXX' = 'Smooth_muscle','XXX' = 'Endothelial','XXX' = 'Pericyte',
                          'XXX' = 'T_cell','XXX' = 'B_cell','XXX' = 'Plasma','XXX' = 'Myeloid','XXX' = 'Neural')
 table(Idents(obj_BLCA))
 obj_BLCA$celltype<-Idents(obj_BLCA)

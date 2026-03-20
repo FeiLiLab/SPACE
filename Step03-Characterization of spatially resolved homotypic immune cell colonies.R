@@ -97,7 +97,7 @@ classify_colony_size <- function(colony_data) {
   
   # Ensure breaks and labels match
   colony_data$size_group <- cut(colony_data$colony_size,
-                                breaks = c(0, 1, 5, 20, 50, Inf),  # Corrected to 5 instead of 10
+                                breaks = c(0, 1, 5, 20, 50, Inf), 
                                 labels = c("single(1)", "small(2-5)", "medium(6-20)", 
                                            "large(21-50)", "huge(>50)"),
                                 include.lowest = TRUE)

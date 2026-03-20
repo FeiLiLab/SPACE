@@ -9,7 +9,7 @@ library(tidyverse)
 options(future.globals.maxSize = 300 * 1024^3) 
 
 
-#################1. Calculate the nearest distance between each malignant cell and T cell across cancer types
+#################1. Calculate the nearest distance between each Malignant/Epithelial cell and T cell across cancer types
 #################
 #################
 #################
@@ -27,28 +27,28 @@ result_df_merge <- tibble(
   Cell_ID = character(),
   cancertype = character(),
   sample = factor(),
-  coord_x_malignant = numeric(),
-  coord_y_malignant = numeric(),
+  coord_x_malignant_epi = numeric(),
+  coord_y_malignant_epi = numeric(),
   distance = numeric(),
   Cell_ID_tcell = character(),
   coord_x_tcell = numeric(),
   coord_y_tcell = numeric())
 
-# Calculate the nearest distance between each malignant cell and T cell across cancer types
+# Calculate the nearest distance between each Malignant/Epithelial cell and T cell across cancer types
 for (cancer in cancer_types){
   seurat_niches_select<-seurat_niches[which(seurat_niches$cancertype==cancer&seurat_niches$niche=="4"),]
   result_df <- seurat_niches_select %>%
     group_by(sample) %>%
     group_modify(~ {
       sample_data <- .x
-      malignant_cells <- sample_data %>% filter(celltype == "Malignant")
+      malignant_epi_cells <- sample_data %>% filter(celltype == "Malignant/Epithelial")
       t_cells <- sample_data %>% filter(celltype == "T_cell")
-      if(nrow(malignant_cells) == 0 | nrow(t_cells) == 0) {
+      if(nrow(malignant_epi_cells) == 0 | nrow(t_cells) == 0) {
         return(data.frame(
           Cell_ID = character(),
           cancertype = character(),
-          coord_x_malignant = numeric(),
-          coord_y_malignant = numeric(),
+          coord_x_malignant_epi = numeric(),
+          coord_y_malignant_epi = numeric(),
           distance = numeric(),
           Cell_ID_tcell = character(),
           coord_x_tcell = numeric(),
@@ -56,20 +56,20 @@ for (cancer in cancer_types){
         ))
       }
       # Loop for each cell
-      result_list <- lapply(1:nrow(malignant_cells), function(i) {
-        malignant_coords <- c(malignant_cells$coord_x[i], malignant_cells$coord_y[i])
+      result_list <- lapply(1:nrow(malignant_epi_cells), function(i) {
+        malignant_epi_coords <- c(malignant_epi_cells$coord_x[i], malignant_epi_cells$coord_y[i])
         
         t_cell_distances <- sqrt(
-          (t_cells$coord_x - malignant_coords[1])^2 + 
-            (t_cells$coord_y - malignant_coords[2])^2
+          (t_cells$coord_x - malignant_epi_coords[1])^2 + 
+            (t_cells$coord_y - malignant_epi_coords[2])^2
         )
         min_index <- which.min(t_cell_distances)
         # Return a list of results
         list(
-          Cell_ID = as.character(malignant_cells$Cell_ID[i]),
-          cancertype = as.character(malignant_cells$cancertype[i]),
-          coord_x_malignant = as.numeric(malignant_cells$coord_x[i]),
-          coord_y_malignant = as.numeric(malignant_cells$coord_y[i]),
+          Cell_ID = as.character(malignant_epi_cells$Cell_ID[i]),
+          cancertype = as.character(malignant_epi_cells$cancertype[i]),
+          coord_x_malignant_epi = as.numeric(malignant_epi_cells$coord_x[i]),
+          coord_y_malignant_epi = as.numeric(malignant_epi_cells$coord_y[i]),
           distance = as.numeric(t_cell_distances[min_index]),
           Cell_ID_tcell = as.character(t_cells$Cell_ID[min_index]),
           coord_x_tcell = as.numeric(t_cells$coord_x[min_index]),
@@ -80,7 +80,7 @@ for (cancer in cancer_types){
       do.call(rbind.data.frame, result_list)
     }) %>%
     ungroup() %>%
-    select(Cell_ID, cancertype, sample, coord_x_malignant, coord_y_malignant, 
+    select(Cell_ID, cancertype, sample, coord_x_malignant_epi, coord_y_malignant_epi, 
            distance, Cell_ID_tcell, coord_x_tcell, coord_y_tcell)
   result_df_merge<-rbind(result_df_merge,result_df)
 }
