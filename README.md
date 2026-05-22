@@ -23,7 +23,7 @@ The SPACE atlas provides the first systematic roadmap for dissecting the spatial
 - Step13-Correlation analysis of distance-based gradient gene expression.ipynb: Python script to perform spatial probability–based tumor-stroma boundary identification and calculate the distance of cells to the boundary.
 Step13-Correlation analysis of distance-based gradient gene expression.R: R script to perform correlation analysis of distance-based gradient gene expression.
 - Step14-Gain-of-function-based Perturb-seq of 36 STAR-T signature genes.R: R script to analysis changes in genes and gene co-expression networks of T cells in the Gain-of-function-based Perturb-seq of 36 STAR-T signature genes.
-- 
+
 # Operation systems
 - Linux version 5.4.0-42-generic x86_64
 - Windows 10 64-bit
