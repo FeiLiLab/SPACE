@@ -21,7 +21,7 @@ The SPACE atlas provides the first systematic roadmap for dissecting the spatial
 - Step11-Definition of the tumor-accessible and -reactive T (STRA-T) cell state.R: R script to identify the solid tumor-accessible and -reactive T (STAR-T) cell state.
 - Step12-Identification of molecular programs of STAR-T cells.R: R script to detect differentially expressed genes (DEGs), cancer-shared DEGS, differentially activated TFs (DATFs), cancer-shared DATFs, and dysregulated ligand-receptor pairs in STAR-T cells compared to other T cells within the tumor core (spatial niche 4).
 - Step13-Correlation analysis of distance-based gradient gene expression.ipynb: Python script to perform spatial probability–based tumor-stroma boundary identification and calculate the distance of cells to the boundary.
-Step13-Correlation analysis of distance-based gradient gene expression.R: R script to perform correlation analysis of distance-based gradient gene expression.
+- Step13-Correlation analysis of distance-based gradient gene expression.R: R script to perform correlation analysis of distance-based gradient gene expression.
 - Step14-Gain-of-function-based Perturb-seq of 36 STAR-T signature genes.R: R script to analysis changes in genes and gene co-expression networks of T cells in the Gain-of-function-based Perturb-seq of 36 STAR-T signature genes.
 
 # Operation systems
