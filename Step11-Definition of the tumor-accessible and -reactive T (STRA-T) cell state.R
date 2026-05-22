@@ -58,7 +58,7 @@ for (cancer in cancer_types) {
   AUC_tcell_merge[[cancer]] <- cells_AUC_tcell
 }
 AUC_tcell_NatMed <- do.call(cbind, AUC_tcell_merge)
-colnames(AUC_tcell_NatMed) <- gsub("^[a-z]+\\.", "", colnames(AUC_tcell_NatMed))
+colnames(AUC_tcell_NatMed) <- gsub("^[A-Z]+\\.", "", colnames(AUC_tcell_NatMed))
 
 seurat_niches<-readRDS("~/space/seurat_niche/metadata_merge.rds") # Merged meta data of all cancers was generated in Step02, line 139
 seurat_niches_tcell<-seurat_niches[which(seurat_niches$celltype=="T_cell"),]

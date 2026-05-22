@@ -27,7 +27,7 @@ table(metadata_merge$celltype)
 # 1_2. Select cell types for cell colony analysis
 ################################################################################
 metadata_merge_select<-metadata_merge
-celltype_immune<-c("T_cell","B_cell","Plasma","Myeloid","Fibroblast","Smooth_muscle","Endothelial","Pericyte")
+celltype_immune<-c("T_cell","B_cell","Plasma","Myeloid","Fibroblast","Myofibroblast","Endothelial","Pericyte")
 metadata_merge_select<-metadata_merge_select[which(metadata_merge_select$celltype %in% celltype_immune),]
 dim(metadata_merge_select)
 spatial_data<-droplevels(metadata_merge_select)

@@ -205,19 +205,19 @@ unique(df.net.cellchat_all_major$source)
 df.net.cellchat_all_major$source=gsub("T-cell","T_cell",df.net.cellchat_all_major$source)
 df.net.cellchat_all_major$source=gsub("B-cell","B_cell",df.net.cellchat_all_major$source)
 df.net.cellchat_all_major$source=gsub("Dendritic-cell","Dendritic_cell",df.net.cellchat_all_major$source)
-df.net.cellchat_all_major$source=gsub("Smooth-muscle","Smooth_muscle",df.net.cellchat_all_major$source)
+df.net.cellchat_all_major$source=gsub("Smooth-muscle","Myofibroblast",df.net.cellchat_all_major$source)
 df.net.cellchat_all_major$target=gsub("T-cell","T_cell",df.net.cellchat_all_major$target)
 df.net.cellchat_all_major$target=gsub("B-cell","B_cell",df.net.cellchat_all_major$target)
 df.net.cellchat_all_major$target=gsub("Dendritic-cell","Dendritic_cell",df.net.cellchat_all_major$target)
-df.net.cellchat_all_major$target=gsub("Smooth-muscle","Smooth_muscle",df.net.cellchat_all_major$target)
+df.net.cellchat_all_major$target=gsub("Smooth-muscle","Myofibroblast",df.net.cellchat_all_major$target)
 
 df.net.cellchat_all_major$pair=paste(df.net.cellchat_all_major$source,df.net.cellchat_all_major$target,sep=":")
 df.net.cellchat_all_major$pair=paste(df.net.cellchat_all_major$pair,df.net.cellchat_all_major$interaction,sep=":")
 
 # (6). Extract data of 10 cell types
-sum(c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Smooth_muscle","Dendritic_cell","Pericyte","Endothelial","Mast") %in% unique(df.net.cellchat_all_major$source))
-df.net.cellchat_all_major=df.net.cellchat_all_major[df.net.cellchat_all_major$source %in% c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Smooth_muscle","Dendritic_cell","Pericyte","Endothelial","Mast"),]
-df.net.cellchat_all_major=df.net.cellchat_all_major[df.net.cellchat_all_major$target %in% c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Smooth_muscle","Dendritic_cell","Pericyte","Endothelial","Mast"),]
+sum(c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Myofibroblast","Dendritic_cell","Pericyte","Endothelial","Mast") %in% unique(df.net.cellchat_all_major$source))
+df.net.cellchat_all_major=df.net.cellchat_all_major[df.net.cellchat_all_major$source %in% c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Myofibroblast","Dendritic_cell","Pericyte","Endothelial","Mast"),]
+df.net.cellchat_all_major=df.net.cellchat_all_major[df.net.cellchat_all_major$target %in% c("T_cell","Plasma","B_cell","Macrophage","Fibroblast","Myofibroblast","Dendritic_cell","Pericyte","Endothelial","Mast"),]
 
 
 # (7). Standardize the ligand and receptor names of data
@@ -265,7 +265,7 @@ selected_marker_genes <- list(
   Pericyte_gt05 = unlist(final_marker_list[["Pericyte_gt05%"]]),
   Plasma_gt05 = unlist(final_marker_list[["Plasma_gt05%"]]),
   B_cell_gt05 = unlist(final_marker_list[["B_cell_gt05%"]]),
-  Smooth_muscle_gt05 = unlist(final_marker_list[["Smooth_muscle_gt05%"]]),
+  Myofibroblast_gt05 = unlist(final_marker_list[["Myofibroblast_gt05%"]]),
   Mast_gt05 = unlist(final_marker_list[["Mast_gt05%"]]),
   Dendritic_cell_gt05 = unlist(final_marker_list[["Dendritic_cell_gt05%"]])
 )

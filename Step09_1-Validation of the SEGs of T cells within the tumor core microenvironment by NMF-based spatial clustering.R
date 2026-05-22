@@ -496,6 +496,6 @@ ncol(cellcomposition_merge)==(sum(sapply(list_of_dfs, ncol))-length(cancer_types
 
 # (8). Save data
 cellcomposition_merge[1:5,1:5]
-cellcomposition_merge=cellcomposition_merge[c("B_cell","Endothelial","Fibroblast","Malignant/Epithelial","Myeloid","Smooth_muscle","Neural","Pericyte","Plasma","T_cell","Oligodendrocyte","Keratinocyte"),]
+cellcomposition_merge=cellcomposition_merge[c("B_cell","Endothelial","Fibroblast","Malignant/Epithelial","Myeloid","Myofibroblast","Neural","Pericyte","Plasma","T_cell","Oligodendrocyte","Keratinocyte"),]
 write.csv(cellcomposition_merge,"~/space/analysis/neighbor/allcancer/tcell/cellcomposition_merge.csv")
 saveRDS(cellcomposition_merge,"~/space/analysis/neighbor/allcancer/tcell/cellcomposition_merge.rds")

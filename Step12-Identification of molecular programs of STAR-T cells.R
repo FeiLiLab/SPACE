@@ -474,12 +474,12 @@ unique(df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("T-cell","T_cell",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("B-cell","B_cell",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("Dendritic-cell","Dendritic_cell",df_filtered_sn4$source)
-df_filtered_sn4$source=gsub("Smooth-muscle","Smooth_muscle",df_filtered_sn4$source)
+df_filtered_sn4$source=gsub("Smooth-muscle","Myofibroblast",df_filtered_sn4$source)
 df_filtered_sn4$source=gsub("Malignant/Epithelial","Malignant_Epithelial",df_filtered_sn4$source)
 df_filtered_sn4$target=gsub("T-cell","T_cell",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("B-cell","B_cell",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("Dendritic-cell","Dendritic_cell",df_filtered_sn4$target)
-df_filtered_sn4$target=gsub("Smooth-muscle","Smooth_muscle",df_filtered_sn4$target)
+df_filtered_sn4$target=gsub("Smooth-muscle","Myofibroblast",df_filtered_sn4$target)
 df_filtered_sn4$target=gsub("Malignant/Epithelial","Malignant_Epithelial",df_filtered_sn4$target)
 unique(df_filtered_sn4$source)
 unique(df_filtered_sn4$target)
@@ -523,7 +523,7 @@ selected_marker_genes <- list(
   Pericyte_gt05 = unlist(final_marker_list[["Pericyte_gt05%"]]),
   Plasma_gt05 = unlist(final_marker_list[["Plasma_gt05%"]]),
   B_cell_gt05 = unlist(final_marker_list[["B_cell_gt05%"]]),
-  Smooth_muscle_gt05 = unlist(final_marker_list[["Smooth_muscle_gt05%"]]),
+  Myofibroblast_gt05 = unlist(final_marker_list[["Myofibroblast_gt05%"]]),
   Mast_gt05 = unlist(final_marker_list[["Mast_gt05%"]]),
   Dendritic_cell_gt05 = unlist(final_marker_list[["Dendritic_cell_gt05%"]]),
   
